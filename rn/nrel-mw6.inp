@@ -1,0 +1,19 @@
+# vim:syntax=sh:
+
+world_prec = 1.0e-6
+world_size = 6
+
+Molecule {
+$coords
+Rn  0.1  0.1  0.1
+$end
+}
+
+WaveFunction {
+  method = PBE
+}
+
+SCF {
+  kain = 7
+  guess_type = core_sz
+}
