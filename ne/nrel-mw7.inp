@@ -1,0 +1,18 @@
+# vim:syntax=sh:
+
+world_prec = 1.0e-7
+world_size = 6
+
+Molecule {
+$coords
+Ne  0.0  0.0  0.0
+$end
+}
+
+WaveFunction {
+  method = PBE
+}
+
+SCF {
+  kain = 7
+}
