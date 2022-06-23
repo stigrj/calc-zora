@@ -48,7 +48,7 @@
       "min_scale": -5
     },
     "printer": {
-      "file_name": "zora-008",
+      "file_name": "zora-smr",
       "print_constants": false,
       "print_level": 0,
       "print_mpi": false,
@@ -72,7 +72,7 @@
         "nuclear_operator": {
           "proj_prec": 1e-08,
           "shared_memory": false,
-          "smooth_prec": 5.842679834962047e-09
+          "smooth_prec": 7.999064117177391e-09
         },
         "xc_operator": {
           "shared_memory": false,
