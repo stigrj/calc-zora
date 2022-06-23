@@ -1,0 +1,20 @@
+#!/bin/bash -l
+
+#SBATCH --ntasks-per-node=12
+#SBATCH --time=06:00:00
+#SBATCH --account=nn4654k
+#SBATCH --partition=normal
+
+module purge
+module restore mrchem-foss-2021b
+module list
+
+PATH=/cluster/home/stig/src/mrchem/install-zora/bin/:$PATH
+which mrchem.x
+
+echo "Running job" ${SLURM_JOB_NAME}
+
+export OMP_NUM_THREADS=15
+mpirun --rank-by node --map-by numa --bind-to numa --oversubscribe mrchem.x ${SLURM_JOB_NAME}.json >${SLURM_JOB_NAME}.out
+
+exit 0
